@@ -42,6 +42,7 @@ import { initializeSocket } from "./utils/socket";
 import TermAndConditionPage from "./Pages/TermAndConditionPage";
 import PrivacyAndPolicyPage from "./Pages/PrivacyAndPolicyPage";
 import CancelAndRefundPage from "./Pages/CancelAndRefundPage";
+import GetMarriedPage from "./Pages/GetMarriedPage";
 
 
 
@@ -137,6 +138,7 @@ function App() {
         <Route path="/privacy" element={<PrivacyAndPolicyPage  />} />
         <Route path="/refund" element={<CancelAndRefundPage />} />
         <Route path="/userReceipts" element={<UserReceiptPage  />} />
+        <Route path="/getmarrigeone" element={<GetMarriedPage  />} />
         
         
         

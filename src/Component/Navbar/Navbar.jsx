@@ -66,26 +66,41 @@ function Navbar() {
               CONTACT US
 
             </NavLink>
+            <NavLink to="/getmarrigeone" className="block py-2 px-6">
+              GET MARRIED
+
+            </NavLink>
 
             {/* {/ Mobile Register Button /} */}
-            <div className="md:hidden jost py-2">
-              <NavLink to="/register/step-one">
-                <button className="w-full bg-[#C34040] text-white px-5 py-2 rounded-full ">
-                  REGISTRATION
+           <div className="md:hidden px-4 pb-4 flex flex-col space-y-2">
+              <NavLink to="/login">
+                <button className="w-full bg-[#C34040] text-white px-5 py-2 rounded-full">
+                  Login
                 </button>
               </NavLink>
-            </div>
+              <NavLink to="/register/step-one">
+                <button className="w-full bg-[#C34040] text-white px-5 py-2 rounded-full">
+                  Register Now
+                </button>
+              </NavLink>
+            </div>
           </div>
         </nav>
 
         {/* {/ Register Button (Desktop) /} */}
-        <div className="hidden md:block jost">
-          <NavLink to="/register/step-one">
-            <button className="bg-[#02BED0] cursor-pointer hover:bg-black text-white px-5 py-2 rounded-full ">
-               REGISTRATION
+       {/* Desktop Buttons */}
+        <div className="hidden md:flex space-x-4">
+          <NavLink to="/login">
+            <button className="bg-[#02BED0] text-white px-5 py-2 cursor-pointer rounded-full hover:bg-black transition-all duration-200">
+              Login
             </button>
           </NavLink>
-        </div>
+          <NavLink to="/register/step-one">
+            <button className="bg-[#02BED0] text-white px-5 py-2 cursor-pointer rounded-full hover:bg-black transition-all duration-200">
+              Register Now
+            </button>
+          </NavLink>
+        </div>
       </div>
     </header>
   );
