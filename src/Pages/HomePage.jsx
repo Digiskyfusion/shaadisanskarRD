@@ -7,6 +7,7 @@ import Navbar from '../Component/Navbar/Navbar'
 
 import Footer from '../Component/FooterPage/Footer'
 import FifthSection from '../Component/HomePage/FifthSection'
+import LegalMarriagePage from '../Component/HomePage/LegalMarriagePage'
 
 
 function  HomePage() {
@@ -15,15 +16,11 @@ function  HomePage() {
      
      <Navbar />
     <FirstSection />
-
-
-
-
-
     <SecondSection  />
     <ThirdSection />
     <FourthSection />
     {/* <FeesCharge /> */}
+    <LegalMarriagePage />
     <FifthSection />
     
     <Footer />

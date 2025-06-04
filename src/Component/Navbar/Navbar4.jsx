@@ -47,6 +47,10 @@ function Navbar4() {
             { label: 'योजनाएं', path: '/plans' },
             { label: 'रसीद', path: '/userReceipts' },
         ],
+         'शादी करना': [
+            { label: 'शादी करना', path: '/getmarrigeone' },
+            
+        ],
     };
 
     useEffect(() => {
