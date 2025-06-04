@@ -9,7 +9,7 @@
   function FirstSection() {
     return (
       <div
-        className="relative w-full  bg-cover bg-center"
+        className="relative w-full md:mt-10  mt-20 bg-cover bg-center"
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/20 " />

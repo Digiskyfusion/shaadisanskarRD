@@ -130,7 +130,7 @@ const UploadSection = () => {
           <div className='flex justify-center gap-3 mt-3'>
             <Link to="/setting">
               <button
-                className={`px-5 py-1 bg-[#FF5A60] text-white text-center rounded-full ${
+                className={`px-5 py-1 bg-[#FF5A60] text-white cursor-pointer text-center rounded-full ${
                   uploading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={uploading}

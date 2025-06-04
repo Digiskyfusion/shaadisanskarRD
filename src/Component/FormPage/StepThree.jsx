@@ -16,7 +16,7 @@
       maritalStatus: '',  
       diet: '',
       height: '',
-      subCommunity: '',
+      gothram: '',
     });
 
     useEffect(() => {
@@ -134,146 +134,164 @@ const handleChange = (e) => {
               <h2 className="text-2xl text-center font-semibold gilda-display-regular">Create your profile now!</h2>
 
               {/* City */}
-              <div>
-                <label className="block  font-medium">City you live in?*</label>
-                <input
-                  type="text"
-                  name="city"
-                  value={formData.city}
-                  onChange={handleChange}
-                  className="mt-1 w-full border  bg-[#E9D8C0] rounded-lg p-2  text-[11px] sm:text-[15px]"
-                />
-              </div>
+             <div>
+  <label className="block font-medium">आप किस शहर में रहते हैं?*</label>
+  <input
+    type="text"
+    name="city"
+    value={formData.city}
+    onChange={handleChange}
+    className="mt-1 w-full border bg-[#E9D8C0] rounded-lg p-2 text-[11px] sm:text-[15px]"
+  />
+</div>
+
 
               {/* Live with family */}
-              <div>
-                <label className="block font-medium">Do you live with your family?*</label>
-                <div className="flex gap-4 mt-1">
-                  <button
-                    type="button"
-                    onClick={() => handleFamilyClick(true)}
-                    className={`px-4 py-2 cursor-pointer  text-[11px] sm:text-[15px] rounded-lg ${formData.liveWithFamily ? 'bg-[#824A23] text-white' : 'bg-[#E9D8C0]'}`}
-                  >
-                    Yes
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleFamilyClick(false)}
-                    className={`px-4 py-2 cursor-pointer rounded-lg  text-[11px] sm:text-[15px] ${!formData.liveWithFamily ? 'bg-[#824A23] text-white' : 'bg-[#E9D8C0]'}`}
-                  >
-                    No
-                  </button>
-                </div>
-              </div>
+             <div>
+  <label className="block font-medium">क्या आप अपने परिवार के साथ रहते हैं?*</label>
+  <div className="flex gap-4 mt-1">
+    <button
+      type="button"
+      onClick={() => handleFamilyClick(true)}
+      className={`px-4 py-2 cursor-pointer text-[11px] sm:text-[15px] rounded-lg ${formData.liveWithFamily ? 'bg-[#824A23] text-white' : 'bg-[#E9D8C0]'}`}
+    >
+      हाँ
+    </button>
+    <button
+      type="button"
+      onClick={() => handleFamilyClick(false)}
+      className={`px-4 py-2 cursor-pointer text-[11px] sm:text-[15px] rounded-lg ${!formData.liveWithFamily ? 'bg-[#824A23] text-white' : 'bg-[#E9D8C0]'}`}
+    >
+      नहीं
+    </button>
+  </div>
+</div>
+
 
               {/* Living in India since */}
               <div className="relative">
-                <select
-                  name="livingInIndiaSince"
-                  value={formData.livingInIndiaSince}
-                  onChange={handleChange}
-                  className="mt-1 w-full    text-[15px] sm:text-[19px] border-0 cursor-pointer  border-b border-gray-400 py-2 pr-6 bg-transparent focus:outline-none appearance-none"
-                >
-                  <option value=" relative left-3">You are living in India since*</option>
-                  <option value="Birth">Birth</option>
-                  <option value="Less than a year">Less than a year</option>
-                  <option value="1 year">1 year</option>
-                  <option value="2 years">2 years</option>
-                  <option value="3 years">3 years</option>
-                  <option value="5 years">5 years</option>
-                  <option value="7 years">7 years</option>
-                  <option value="10 years">10 years</option>
-                  <option value="15 years">15 years</option>
-                  <option value="20 years">20 years</option>
-                  <option value="25 years">25 years</option>
-                  <option value="30+ years">30+ years</option>
-                  <option value="Recently moved">Recently moved</option>
-                </select>
-                <FaChevronDown className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
-              </div>
+  <select
+    name="livingInIndiaSince"
+    value={formData.livingInIndiaSince}
+    onChange={handleChange}
+    className="mt-1 w-full text-[15px] sm:text-[19px] border-0 cursor-pointer border-b border-gray-400 py-2 pr-6 bg-transparent focus:outline-none appearance-none"
+  >
+    <option value="">आप भारत में कब से रह रहे हैं?*</option>
+    <option value="Birth">जन्म से</option>
+    <option value="Less than a year">1 साल से कम</option>
+    <option value="1 year">1 साल</option>
+    <option value="2 years">2 साल</option>
+    <option value="3 years">3 साल</option>
+    <option value="5 years">5 साल</option>
+    <option value="7 years">7 साल</option>
+    <option value="10 years">10 साल</option>
+    <option value="15 years">15 साल</option>
+    <option value="20 years">20 साल</option>
+    <option value="25 years">25 साल</option>
+    <option value="30+ years">30+ साल</option>
+    <option value="Recently moved">हाल ही में आए हैं</option>
+  </select>
+  <FaChevronDown className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
+</div>
 
               {/* Marital status */}
-             <div className="relative">
+          <div className="relative">
   <select
     name="maritalStatus"
     value={formData.maritalStatus}
     onChange={handleChange}
     className="mt-1 w-full text-[14px] sm:text-[19px] border-0 cursor-pointer border-b border-gray-400 py-2 bg-transparent focus:outline-none appearance-none"
   >
-    <option value="">Your marital status*</option>
-    <option value="Single">Single</option>
-    <option value="Married">Married</option>
-    <option value="Divorced">Divorced</option>
-    <option value="Widowed">Widowed</option>
+    <option value="">आपकी वैवाहिक स्थिति*</option>
+    <option value="Single">अविवाहित</option>
+    <option value="Married">विवाहित</option>
+    <option value="Divorced">तलाकशुदा</option>
+    <option value="Widowed">विधवा/विधुर</option>
   </select>
-  <FaChevronDown className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"   />
+  <FaChevronDown className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
 </div>
 
+
               {/* Diet */}
-              <div>
-                <label className="block font-medium text-[14px] sm:text-[19px] ">Your diet</label>
-                <div className="grid grid-cols-2 gap-2 mt-1 cursor-pointer text-[11px] sm:text-[19px] ">
-                  {['Vegetarian', 'Non-Vegetarian', 'Vegan', 'Other'].map((diet) => (
-                    <label key={diet} className="flex items-center gap-2 cursor-pointer ">
-                      <input
-                        type="radio"
-                        name="diet"
-                        value={diet}
-                        checked={formData.diet === diet}
-                        onChange={handleChange}
-                      />
-                      {diet.toUpperCase()}
-                    </label>
-                  ))}
-                </div>
-              </div>
+             <div>
+  <label className="block font-medium text-[14px] sm:text-[19px]">आपका आहार</label>
+  <div className="grid grid-cols-2 gap-2 mt-1 cursor-pointer text-[11px] sm:text-[19px]">
+    {[
+      { value: 'Vegetarian', label: 'शाकाहारी' },
+      { value: 'Non-Vegetarian', label: 'मांसाहारी' },
+      { value: 'Vegan', label: 'शुद्ध शाकाहारी (Vegan)' },
+      { value: 'Other', label: 'अन्य' }
+    ].map((diet) => (
+      <label key={diet.value} className="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"
+          name="diet"
+          value={diet.value}
+          checked={formData.diet === diet.value}
+          onChange={handleChange}
+        />
+        {diet.label}
+      </label>
+    ))}
+  </div>
+</div>
+
 
               {/* Height */}
               <div className="relative">
-                <select
-                  name="height"
-                  value={formData.height}
-                  onChange={handleChange}
-                  className="mt-1 w-full  text-[14px] sm:text-[19px] border-0 border-b cursor-pointer border-gray-400 py-2 pr-6 bg-transparent focus:outline-none appearance-none"
-                >
-                  <option value="">Your height?*</option>
-                  {Array.from({ length: (7 - 4) * 12 + 1 }, (_, i) => {
-                    const totalInches = 48 + i;
-                    const feet = Math.floor(totalInches / 12);
-                    const inches = totalInches % 12;
-                    const label = `${feet}'${inches}"`;
-                    return <option key={label} value={label}>{label}</option>;
-                  })}
-                </select>
-                <FaChevronDown className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
-              </div>
+  <select
+    name="height"
+    value={formData.height}
+    onChange={handleChange}
+    className="mt-1 w-full text-[14px] sm:text-[19px] border-0 border-b cursor-pointer border-gray-400 py-2 pr-6 bg-transparent focus:outline-none appearance-none"
+  >
+    <option value="">आपकी ऊँचाई?*</option>
+    {Array.from({ length: (7 - 4) * 12 + 1 }, (_, i) => {
+      // कुल इंच = 4 फीट (48 इंच) + i
+      const totalInches = 48 + i;
+      const feet = Math.floor(totalInches / 12); // फीट निकालना
+      const inches = totalInches % 12; // बचा हुआ इंच
+      // अगर इंच 0 हो तो सिर्फ फीट दिखाएं, नहीं तो फीट और इंच दोनों
+      const label = inches === 0 ? `${feet}'` : `${feet}'${inches}"`;
+      return (
+        <option key={label} value={label}>
+          {label}
+        </option>
+      );
+    })}
+  </select>
+  <FaChevronDown className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
+</div>
+
 
               {/* Sub-community */}
-              {/* <div className="relative">
-                <select
-                  name="subCommunity"
-                  value={formData.subCommunity}
-                  onChange={handleChange}
-                  className="mt-1 w-full  text-[15px] sm:text-[19px] border-0 cursor-pointer border-b border-gray-400 py-2 pr-6 bg-transparent focus:outline-none appearance-none"
-                >
-                  <option value="">Your sub-community?*</option>
-                  {[
-                    'Punjabi', 'Marwari', 'Gujarati', 'Sindhi', 'Bengali', 'Malayali', 'Tamilian', 'Telugu',
-                    'Kannada', 'Bihari', 'Rajasthani', 'Kashmiri', 'Oriya', 'Assamese', 'Himachali', 'Goan',
-                    'Maharashtrian', 'North East Indian', 'Manipuri', 'Himachali','Tripuri', 'Mizo', 'Naga', 'Sikkimese',
-                    'Garhwali', 'Kumaoni', 'Dogri', 'Bhutia', 'Santhali', 'Garo', 'Khasi', 'Meitei', 'Tulu',
-                    'Konkan', 'Coorgi', 'Parsi', 'Jain', 'Buddhist', 'Other'
-                  ].map((community) => (
-                    <option key={community} value={community}>{community.toUpperCase()}</option>
-                  ))}
-                </select>
-                <FaChevronDown className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
-              </div> */}
+              {/* Sub-community */}
+             <div className="relative">
+  <select
+    name="gothram"
+    value={formData.gothram}
+    onChange={handleChange}
+    className="mt-1 w-full text-[15px] sm:text-[19px] border-0 cursor-pointer border-b border-gray-400 py-2 pr-6 bg-transparent focus:outline-none appearance-none"
+  >
+    <option value="">गोत्र*</option>
+    {[
+      "गौशिल", "गौरुढ", "रावेल", "ढाकरी", "भरट", "भोरज", "बावल", "लल्याण", "गयंद",
+      "गौरीयल", "गंगवेर", "अर्गल", "तपशिल", "पर्वोषि", "वामन", "परीवाल", "भूकर्ण", "ढापेल",
+      "शुकवाल्य", "ब्रह्मपाल", "मोहरी", "वढगुर्ज", "श्विल्यान", "चर्वण", "खतंतर", "लोघर",
+      "भारद", "भटनाग", "कौस्थंभ", "मल्लल्य", "कछप", "गौशल", "गुरदर", "लोढरी", "सुरघ्वज", "छांडल्य"
+    ].map((community) => (
+      <option key={community} value={community}>{community.toUpperCase()}</option>
+    ))}
+  </select>
+  <FaChevronDown className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
+</div>
+
 
               {/* Submit */}
               <div className="flex justify-center">
                 <button type="submit" className="bg-[#824A23] w-full cursor-pointer text-white px-8 py-2 rounded-full">
-                  Continue
+                 जारी रखें
+
                 </button>
               </div>
             </form>

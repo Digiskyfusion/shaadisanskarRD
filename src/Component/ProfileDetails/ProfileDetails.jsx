@@ -135,7 +135,7 @@ function ProfileDetails() {
               </button>
 
               <button
-                onClick={() => navigate(`/Chat/${userId}`)}
+                onClick={() => navigate(`/plans`)}
                 className={`flex items-center gap-2 px-5 py-2 cursor-pointer ${buttonBg} text-white rounded-full shadow-lg transition duration-300`}
               >
                 <BsChatRightHeartFill />

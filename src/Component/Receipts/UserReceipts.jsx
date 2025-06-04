@@ -57,8 +57,8 @@ const UserReceipts = () => {
                   <li><FaEnvelope className="inline mr-1 text-blue-500" /> <strong>ईमेल:</strong> {receipt.email}</li>
                   <li><FaPhone className="inline mr-1 text-blue-500" /> <strong>मोबाइल:</strong> {receipt.mobileNumber}</li>
                   <li><strong>प्लान:</strong> <span className="text-green-600 font-semibold">{receipt.planName}</span></li>
-                  <li><strong>जोड़े गए क्रेडिट:</strong> {receipt.creditsAdded}</li>
-                  <li><strong>कुल क्रेडिट:</strong> {receipt.totalCredits}</li>
+                  {/* <li><strong>जोड़े गए क्रेडिट:</strong> {receipt.creditsAdded}</li> */}
+                  {/* <li><strong>कुल क्रेडिट:</strong> {receipt.totalCredits}</li> */}
                   <li><FaCreditCard className="inline mr-1 text-blue-500" /> <strong>पेमेंट आईडी:</strong> {receipt.paymentId}</li>
                   <li><strong>ऑर्डर आईडी:</strong> {receipt.orderId}</li>
                   <li><FaCalendarAlt className="inline mr-1 text-blue-500" /> <strong>भुगतान तिथि:</strong> {new Date(receipt.paymentDate).toLocaleString()}</li>

@@ -20,7 +20,7 @@ function  HomePage() {
 
 
 
-    <SecondSection />
+    <SecondSection  />
     <ThirdSection />
     <FourthSection />
     {/* <FeesCharge /> */}

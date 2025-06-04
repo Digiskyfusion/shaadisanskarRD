@@ -13,43 +13,70 @@ const StepTwo = ({ formData, setFormData, prevStep }) => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = async () => {
-    try {
-      const password = formData.password;
+  // const handleSubmit = async () => {
+  //   try {
+  //     const password = formData.password;
 
-      const passwordRegex =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+  //     const passwordRegex =
+  //       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
-      if (!passwordRegex.test(password)) {
-        toast.error("पासवर्ड कम से कम 8 अक्षरों का होना चाहिए और इसमें बड़े अक्षर, छोटे अक्षर, नंबर और सिम्बल शामिल होना चाहिए।");
-        return;
-      }
+  //     if (!passwordRegex.test(password)) {
+  //       toast.error("पासवर्ड कम से कम 8 अक्षरों का होना चाहिए और इसमें बड़े अक्षर, छोटे अक्षर, नंबर और सिम्बल शामिल होना चाहिए।");
+  //       return;
+  //     }
 
-      const res = await axios.post(`${API}user/register`, formData);
-      const { token } = res.data;
+  //     const res = await axios.post(`${API}user/register`, formData);
+  //     const { token } = res.data;
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("userProfile", JSON.stringify(res.data.user));
-      toast.success("फॉर्म सफलतापूर्वक सबमिट हो गया");
+  //     localStorage.setItem("token", token);
+  //     localStorage.setItem("userProfile", JSON.stringify(res.data.user));
+  //     toast.success("फॉर्म सफलतापूर्वक सबमिट हो गया");
 
-      setFormData({
-        profileFor: "",
-        firstName: "",
-        lastName: "",
-        gender: "",
-        mobileNumber: "",
-        emailId: "",
-        dob: "",
-        password: "",
-      });
+  //     setFormData({
+  //       profileFor: "",
+  //       firstName: "",
+  //       lastName: "",
+  //       gender: "",
+  //       mobileNumber: "",
+  //       emailId: "",
+  //       dob: "",
+  //       password: "",
+  //     });
 
-      setTimeout(() => {
-        navigate("/StepThree");
-      }, 1500);
-    } catch (err) {
-      toast.warning("यूजर पहले से ही रजिस्टर है");
-    }
-  };
+  //     setTimeout(() => {
+  //       navigate("/StepThree");
+  //     }, 1500);
+  //   } catch (err) {
+  //     toast.warning("यूजर पहले से ही रजिस्टर है");
+  //   }
+  // };
+const handleSubmit = async () => {
+  try {
+    const res = await axios.post(`${API}user/register`, formData);
+    const { token } = res.data;
+
+    localStorage.setItem("token", token);
+    localStorage.setItem("userProfile", JSON.stringify(res.data.user));
+    toast.success("फॉर्म सफलतापूर्वक सबमिट हो गया");
+
+    setFormData({
+      profileFor: "",
+      firstName: "",
+      lastName: "",
+      gender: "",
+      mobileNumber: "",
+      emailId: "",
+      dob: "",
+      password: "",
+    });
+
+    setTimeout(() => {
+      navigate("/StepThree");
+    }, 1500);
+  } catch (err) {
+    toast.warning("यूजर पहले से ही रजिस्टर है");
+  }
+};
 
   return (
     <>
@@ -222,11 +249,11 @@ const StepTwo = ({ formData, setFormData, prevStep }) => {
                 </button>
               </div>
 
-              <marquee>
+              {/* <marquee>
                 <p className="text-center text-yellow-500 text-sm rounded-md">
                   आपका पासवर्ड कम से कम 8 अक्षर का होना चाहिए और उसमें बड़े अक्षर, छोटे अक्षर, नंबर और सिम्बल होना आवश्यक है।
                 </p>
-              </marquee>
+              </marquee> */}
 
               <button
                 type="submit"

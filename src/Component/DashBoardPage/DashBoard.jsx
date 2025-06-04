@@ -53,7 +53,8 @@ function DashBoard() {
             <h2 className="text-xl font-bold text-white mb-8">आपकी गतिविधि</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="bg-[#FAF4EE] rounded-xl p-4 flex flex-col items-center text-center shadow-sm">
-                <span className="text-2xl font-bold text-black">{credits?.credits}</span>
+                {/* <span className="text-2xl font-bold text-black">{credits?.credits}</span> */}
+                <span className="text-2xl font-bold text-black">{0}</span>
                 <span className="text-sm text-black">आपके क्रेडिट्स</span>
               </div>
               <div className="bg-[#FAF4EE] rounded-xl p-4 flex flex-col items-center text-center shadow-sm">

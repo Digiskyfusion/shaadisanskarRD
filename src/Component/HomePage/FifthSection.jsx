@@ -13,7 +13,7 @@ const FifthSection = () => {
     {
       name: "डायमंड",
       price: 199,
-      // credits: "30 क्रेडिट्स",
+      // credits: "100 क्रेडिट्स",
       features: [
         "लोगों को संदेश भेजें",
         "अधिकतम 30 प्रोफाइल्स देखें",
@@ -53,11 +53,15 @@ const FifthSection = () => {
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
               userId: user._id,
-              plan: plan.credits,
+              // plan: plan.credits,
               planName: plan.name,
             });
             toast.success("भुगतान सफल रहा! क्रेडिट्स जोड़ दिए गए हैं।");
-            setTimeout(() => navigate("/userReceipts"), 1000);
+            setTimeout(() => {
+  window.location.href = `https://wa.me/917888386878`; // Replace with your actual number
+}, 1000);
+
+            // setTimeout(() => navigate("/userReceipts"), 1000);
           } catch (error) {
             toast.error("भुगतान सत्यापन विफल रहा।");
           } finally {
@@ -114,7 +118,7 @@ const FifthSection = () => {
               </div>
 
               <h2 className="mt-12 text-2xl font-bold mb-3">{plan.name}</h2>
-              <p className="mb-4 text-sm text-white">{plan.credits}</p>
+              {/* <p className="mb-4 text-sm text-white">{plan.credits}</p> */}
 
               <ul className="space-y-3 mb-6 text-sm text-left w-full">
                 {plan.features.map((feature, i) => (

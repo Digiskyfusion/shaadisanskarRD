@@ -1,17 +1,19 @@
 import React from 'react';
 import emoji from '../../assets/Images/Untitled-1 2.png';
 
-function OneSection({name}) {
+function OneSection({ name }) {
   return (
-    <div className="relative w-full h-60 sm:h-auto flex justify-center  items-cente bg-[#FF3540]">
-      {/* Background Image */}
-      <img src={emoji} alt="emoji" className="w-70 h-70 object-cover ml-170 " />
+    <div className="relative w-full flex flex-col sm:flex-row justify-center items-center bg-[#FF3540] py-10 sm:py-16 md:mt-10 mt-20">
+      {/* Background/Image */}
+      <img 
+        src={emoji} 
+        alt="emoji" 
+        className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 object-cover mb-4 sm:mb-0 sm:mr-6" 
+      />
 
-      {/* Responsive "About Us" Text */}
-      <p className="absolute left-1/7 sm:right-6 md:left-10 lg:right-40 top-1/2 mt-10 transform -translate-y-1/2 
-                    text-[20px] sm:text-[25px] md:text-[45px] lg:text-[45px] 
-                    font-medium text-transparent bg-clip-text bg-white tracking-widest">
-       {name}
+      {/* Responsive Text */}
+      <p className="text-center sm:text-left text-[20px] sm:text-[25px] md:text-[40px] lg:text-[45px] font-medium text-white tracking-widest">
+        {name}
       </p>
     </div>
   );
