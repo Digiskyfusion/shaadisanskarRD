@@ -42,8 +42,8 @@ function Navbar4() {
             { label: 'मेरे नज़दीक', path: '/secondmatch' },
             { label: 'सभी प्रोफाइल', path: '/allprofile' },
         ],
-        'इनबॉक्स': [
-            { label: 'संदेश', path: '/Chat' },
+        'योजनाएं': [
+            // { label: 'संदेश', path: '/Chat' },
             { label: 'योजनाएं', path: '/plans' },
             { label: 'रसीद', path: '/userReceipts' },
         ],
